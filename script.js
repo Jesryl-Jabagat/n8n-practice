@@ -173,7 +173,7 @@ function scrollToBottom() {
 // Send Message to N8N
 async function sendMessageToN8N(message) {
     try {
-        const response = await fetch(N8N_WEBHOOK_URL, {
+        const response = await fetch(https://gwenchana123.app.n8n.cloud/webhook-test/chatbot, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
