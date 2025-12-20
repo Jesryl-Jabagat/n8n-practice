@@ -173,7 +173,7 @@ function scrollToBottom() {
 // Send Message to N8N
 async function sendMessageToN8N(message) {
     try {
-        const response = await fetch(https://gwenchana123.app.n8n.cloud/webhook-test/chatbot, {
+        const response = await fetch(https://gwenchana123.app.n8n.cloud/webhook/chatbot, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -214,7 +214,7 @@ chatForm.addEventListener('submit', async (e) => {
     // For demo purposes, if URL is placeholder, we simulate a response
     let botResponse;
 
-    if (N8N_WEBHOOK_URL.includes('https://gwenchana123.app.n8n.cloud/webhook-test/chatbot')) {
+    if (N8N_WEBHOOK_URL.includes('https://gwenchana123.app.n8n.cloud/webhook/chatbot')) {
         // Simulate network delay
         await new Promise(resolve => setTimeout(resolve, 1500));
         botResponse = "I am currently in demo mode. Please configure the N8N_WEBHOOK_URL in script.js to connect me to your real AI agent!";
