@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern login form for practicing JavaScript">
+    <title>Login Form - JavaScript Practice</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="nav-logo">
+        <i class="fas fa-cube"></i> Voxel Vanguard
+    </div>
+    <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-login-btn" id="openLoginBtn">Login</button>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero" id="home">
+    <div class="hero-content">
+        <h1>Experience the Future of <br> <span class="highlight">Digital Innovation</span></h1>
+        <p>Join millions of users discovering the power of next-generation web technologies. Secure, fast, and
+            beautifully designed.</p>
+        <div class="hero-btns">
+            <button class="btn-primary" id="heroGetStartedBtn">Get Started</button>
+            <button class="btn-secondary">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Abstract Background Shapes for Hero -->
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+    </div>
+</header>
+
+<!-- Login Modal (Hidden by Default) -->
+<div class="modal-overlay" id="loginModal">
+    <div class="modal-container">
+        <button class="close-modal-btn" id="closeModalBtn">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Original Login Container Content -->
+        <div class="login-container">
+            <!-- Login Card -->
+            <div class="login-card">
+                <!-- Logo/Brand Section -->
+                <div class="login-header">
+                    <div class="logo-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h1 class="login-title">Welcome Back</h1>
+                    <p class="login-subtitle">Please login to your account</p>
+                </div>
+
+                <!-- Login Form -->
+                <form class="login-form" id="loginForm">
+                    <!-- Email/Username Input -->
+                    <div class="form-group">
+                        <label for="username">
+                            <i class="fas fa-user"></i>
+                            Username or Email
+                        </label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username or email"
+                            required autocomplete="username">
+                        <span class="error-message" id="usernameError"></span>
+                    </div>
+
+                    <!-- Password Input -->
+                    <div class="form-group">
+                        <label for="password">
+                            <i class="fas fa-lock"></i>
+                            Password
+                        </label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" placeholder="Enter your password"
+                                required autocomplete="current-password">
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="error-message" id="passwordError"></span>
+                    </div>
+
+                    <!-- Remember Me & Forgot Password -->
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkmark"></span>
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-password" id="forgotPassword">Forgot Password?</a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <span class="btn-text">Login</span>
+                        <span class="btn-loader" id="btnLoader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+
+                    <!-- Social Login Divider -->
+                    <div class="divider">
+                        <span>Or continue with</span>
+                    </div>
+
+                    <!-- Social Login Buttons -->
+                    <div class="social-login">
+                        <button type="button" class="social-btn google" id="googleLogin">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="social-btn facebook" id="facebookLogin">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                        <button type="button" class="social-btn github" id="githubLogin">
+                            <i class="fab fa-github"></i>
+                            GitHub
+                        </button>
+                    </div>
+
+                    <!-- Sign Up Link -->
+                    <p class="signup-link">
+                        Don't have an account? <a href="#" id="signupLink">Sign up</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Success Message (Hidden by default) -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Login Successful!</h2>
+                <p>Welcome back, <span id="welcomeUser">User</span>!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chat Widget -->
+<div class="chat-widget">
+    <!-- Chat Button -->
+    <button class="chat-toggle-btn" id="chatToggleBtn">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <i class="fas fa-robot"></i>
+                <div class="chat-header-text">
+                    <h3>AI Assistant</h3>
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+            <button class="chat-close-btn" id="chatCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Welcome Message -->
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! How can I help you today?
+                </div>
+                <div class="message-time">Just now</div>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <form id="chatForm">
+                <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+                <button type="submit" id="chatSendBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+
+</html>
