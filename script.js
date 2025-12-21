@@ -185,9 +185,14 @@ async function sendMessageToN8N(message) {
             return `Error: Server responded with status ${response.status}. Make sure the n8n workflow is active or listening (if testing).`;
         }
 
-        const data = await response.json();
-        // Assuming n8n returns a JSON object with a 'output' or 'text' property
-        return data.output || data.text || data.message || "I received your message but didn't get a proper response format.";
+        const responseText = await response.text();
+        try {
+            const data = JSON.parse(responseText);
+            return data.output || data.text || data.message || "Message sent successfully!";
+        } catch (e) {
+            // It was successful (200 OK) but not JSON (likely plain text "Webhook received")
+            return responseText || "Message sent successfully (No content).";
+        }
 
     } catch (error) {
         console.error('Error connecting to n8n:', error);
