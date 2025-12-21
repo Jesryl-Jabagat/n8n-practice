@@ -182,7 +182,7 @@ async function sendMessageToN8N(message) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            return `Error: Server responded with status ${response.status}. Make sure the n8n workflow is active or listening (if testing).`;
         }
 
         const data = await response.json();
@@ -191,7 +191,7 @@ async function sendMessageToN8N(message) {
 
     } catch (error) {
         console.error('Error connecting to n8n:', error);
-        return "Sorry, I'm having trouble connecting to the server right now. Please try again later.";
+        return `Connection Error: ${error.message}. (Check console for CORS details)`;
     }
 }
 
