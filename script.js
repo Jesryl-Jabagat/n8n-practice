@@ -107,7 +107,7 @@ const chatMessages = document.getElementById('chatMessages');
 const chatSendBtn = document.getElementById('chatSendBtn');
 
 // N8N Webhook URL - REPLACE THIS WITH YOUR ACTUAL WEBHOOK URL
-const N8N_WEBHOOK_URL = 'https://gwenchana123.app.n8n.cloud/webhook-test/chatbot';
+const N8N_WEBHOOK_URL = 'https://gwenchana123.app.n8n.cloud/webhook/chatbot';
 
 // Toggle Chat Window
 function toggleChat() {
