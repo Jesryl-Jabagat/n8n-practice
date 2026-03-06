@@ -19,10 +19,10 @@ Related Issue: #54
 
 | Module              | Citizen        | Barangay Official           | LGU Staff        | Dept Head         | Information Officer | MDRRMO         | Executive | Admin             |
 | ------------------- | -------------- | --------------------------- | ---------------- | ----------------- | ------------------- | -------------- | --------- | ----------------- |
-| Registration        | Self Register  | Register / Verify Residents |                  |                   |                    |                |           | Password Reset    |
-| Concern Reporting   | Create / Track |                             | Process Reports  | Assign / Escalate |                     |                | View All  | Manage Categories |
-| Emergency (SOS)     | Trigger SOS    |                             |                  |                   |                     | Manage Centers |           | System Config     |
-| News / Events       | View           | Barangay Post               |                  |                   | Publish LGU News    | Alerts         |           |                   |
-| Projects            | View / Rate    | View                        | Post Information | Update Status     |                     |                | Dashboard |                   |
+| Registration        | Self Register (Unverified)| Assisted Registration / Verify Residents |                  |                   |                    |                |           | Password Reset    |
+| Concern Reporting   | Create / Track (Verified Only) |                             | Process Reports  | Assign / Escalate |                     |                | View All  | Manage Categories |
+| Emergency (SOS)     | Trigger SOS (Verified Only)   |                             |                  |                   |                     | Manage Centers |           | System Config     |
+| News / Events       | View           | Barangay Post Announcement              |                  |                   | Publish LGU News    | Alerts         |           |                   |
+| Projects            | View / Rate (Verified Only)    | View Barangay Project                      | Post Information | Update Status     |                     |                | Dashboard |                   |
 | Category Management |                |                             |                  |                   |                     |                |           | Manage Categories |
-| User Management     |                | Manage Barangay Residents   |                  |                   |                     |                |           | CRUD Users        |
+| User Management     |                | Manage Residents(Brgy Scope)  |                  |                   |                     |                |           | CRUD Users        |
