@@ -19,7 +19,7 @@ Related Issue: #54
 
 | Module              | Citizen        | Barangay Official           | LGU Staff        | Dept Head         | Information Officer | MDRRMO         | Executive | Admin             |
 | ------------------- | -------------- | --------------------------- | ---------------- | ----------------- | ------------------- | -------------- | --------- | ----------------- |
-| Registration        | Self Register  | Register / Verify Residents |                  |                   | -                   |                |           | Password Reset    |
+| Registration        | Self Register  | Register / Verify Residents |                  |                   |                    |                |           | Password Reset    |
 | Concern Reporting   | Create / Track |                             | Process Reports  | Assign / Escalate |                     |                | View All  | Manage Categories |
 | Emergency (SOS)     | Trigger SOS    |                             |                  |                   |                     | Manage Centers |           | System Config     |
 | News / Events       | View           | Barangay Post               |                  |                   | Publish LGU News    | Alerts         |           |                   |
